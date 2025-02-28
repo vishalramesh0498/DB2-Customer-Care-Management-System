@@ -1,0 +1,4 @@
+CREATE TABLE students.Issues(
+IssueID VARCHAR(50) NOT NULL PRIMARY KEY,
+IssueDescription VARCHAR(100)
+) IN tsp01 INDEX IN tsp01;

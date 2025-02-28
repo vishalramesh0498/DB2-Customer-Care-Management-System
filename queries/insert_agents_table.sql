@@ -1,0 +1,12 @@
+CREATE TABLE students.Agents(
+AgentID VARCHAR(50) NOT NULL PRIMARY KEY,
+FirstName VARCHAR(50),
+LastName VARCHAR(50),
+Email VARCHAR(100),
+Phone VARCHAR(50),
+DepartmentID VARCHAR(50) NOT NULL,
+Role VARCHAR(50),
+Salary INT,
+State VARCHAR(50),
+Country VARCHAR(50)
+) IN tsp01 INDEX IN tsp01;
