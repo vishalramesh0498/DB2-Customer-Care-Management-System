@@ -1,0 +1,204 @@
+- Created database students
+	- db2 create database students on c:\
+
+- Connecting to database
+	- db2 connect to students
+
+- List Databases
+	- db2 list db directory
+
+- Load Data into Database
+	Customers:
+		- db2 -tvf insert_customers_table.sql
+		- CREATE TABLE students.Customers(
+		  CustomerID VARCHAR(50) NOT NULL PRIMARY KEY,
+			  Name VARCHAR(50),
+		  Email VARCHAR(100),
+		  Phone VARCHAR(50),
+		  Gender VARCHAR(50),
+		  TotalSpent DECIMAL(10,2),
+			  AccountStatus VARCHAR(50), 
+		  CustomerType VARCHAR(50)
+		  ) IN tsp01 INDEX IN tsp01;
+		- db2 import from c:\inst2593\Project\Customers.csv of del skipcount 1 insert into students.customers
+
+	Agents:
+		- db2 -tvf insert_agents_table.sql
+		- CREATE TABLE students.Agents(
+		  AgentID VARCHAR(50) NOT NULL PRIMARY KEY,
+		  FirstName VARCHAR(50),
+		  LastName VARCHAR(50),
+		  Email VARCHAR(100),
+		  Phone VARCHAR(50),
+		  DepartmentID VARCHAR(50) NOT NULL,
+		  Role VARCHAR(50),
+		  Salary INT, State VARCHAR(50), 
+		  Country VARCHAR(50)
+		  ) IN tsp01 INDEX IN tsp01;
+		- db2 import from c:\inst2593\Project\Agents.csv of del skipcount 1 insert into students.agents
+
+	Calls:
+		- db2 -tvf insert_calls_table.sql
+		- CREATE TABLE students.Calls(
+		  CallID VARCHAR(50) NOT NULL PRIMARY KEY, 
+		  CustomerID VARCHAR(50) NOT NULL, 
+		  AgentID VARCHAR(50) NOT NULL, 
+		  CallDuration INT, 
+		  CallIssueID VARCHAR(50) NOT NULL,
+		  DaysToResolve INT, 
+		  IssueStatus VARCHAR(50),
+
+		  FOREIGN KEY (CustomerID) REFERENCES students.Customers(CustomerID),
+		  FOREIGN KEY (AgentID) REFERENCES students.Agents(AgentID),
+		  FOREIGN KEY (CallIssueID) REFERENCES students.Issues(IssueID)
+		  ) IN tsp01 INDEX IN tsp01;
+		- db2 import from c:\inst2593\Project\Calls.csv of del skipcount 1 insert into students.calls
+
+	Issues
+		- db2 -tvf insert_issues_table.sql
+		- CREATE TABLE students.Issues(
+		  IssueID VARCHAR(50) NOT NULL PRIMARY KEY,
+		  IssueDescription VARCHAR(100)
+		  ) IN tsp01 INDEX IN tsp01;
+		- db2 import from c:\inst2593\Project\Issues.csv of del skipcount 1 insert into students.issues
+
+	Resolution
+		- db2 -tvf insert_resolution_table.sql
+		- CREATE TABLE students.Resolution(
+		  ResolutionID VARCHAR(50) NOT NULL PRIMARY KEY,
+		  ResolutionDescription VARCHAR(50),
+		  CustomerID VARCHAR(50) NOT NULL,
+		  IssueID VARCHAR(50) NOT NULL,
+
+		  FOREIGN KEY (CustomerID) REFERENCES students.Customers(CustomerID),
+		  FOREIGN KEY (IssueID) REFERENCES students.Issues(IssueID)
+		  ) IN tsp01 INDEX IN tsp01;
+		- db2 import from c:\inst2593\Project\Resolution.csv of del skipcount 1 insert into students.resolution
+
+- Insert Update and Delete Calls Table records
+	- Insert
+		- db2 -tvf insert_new_values_into_calls_table.sql
+		- INSERT INTO students.calls (CallID, CustomerID, AgentID, CallDuration, CallIssueID, DaysToResolve, IssueStatus)
+		  VALUES ('CL201', 'C001', 'A24', 16, 'CI21', 11, 'Resolved');
+	
+	- Update
+		- db2 UPDATE students.calls 
+		  SET IssueStatus = ‘Unresolved’ , DaysToResolve = -1
+		  WHERE CallID = ‘CL201’
+
+	- Delete	
+		- db2 DELETE FROM students.calls 
+		  WHERE CallID = ‘CL201’
+
+- Backup 
+	- db2 UPDATE DATABASE CONFIGURATION USING logarchmeth1 “DISK:C:\inst2593\archive” logprimary 2 logsecond 10 logfilsiz 1000 LOGINDEXBUILD OFF
+	- db2 connect reset
+	- db2 force application all
+	- db2 terminate
+	- db2 deactivate database students
+	- db2 BACKUP DATABASE STUDENTS TO c:\inst2593\backup COMPRESS
+
+- SQL queries	
+	- Total Number of Calls Handled by Each Agent
+		- db2 -tvf sql_query_1.sql
+		- SELECT AgentID, COUNT(*) AS TotalCalls
+		  FROM students.Calls
+		  GROUP BY AgentID;
+
+	- Average Call Duration
+		- db2 -cfg sql_query_2.sql
+		- SELECT AVG(CallDuration) AS AvgCallDuration
+		  FROM students.Calls;
+
+	- Most common issues reported by customers
+		- db2 -cfg sql_query_3.sql
+		- SELECT I.IssueDescription, COUNT(C.CallIssueID) AS IssueCount
+		  FROM students.Issues I
+		  JOIN students.Calls C ON I.IssueID = C.CallIssueID
+		  GROUP BY I.IssueDescription
+		  ORDER BY IssueCount DESC
+		  LIMIT 10;
+
+	- List of Calls Longer Than a Certain Duration
+		- db2 -cfg sql_query_4.sql
+		- SELECT *
+		  FROM students.Calls
+		  WHERE CallDuration > 20;
+
+	- Number of Resolved vs Unresolved Issues
+		- db2 -cfg sql_query_5.sql
+		- SELECT IssueStatus, COUNT(*) AS IssueCount
+		  FROM students.Calls
+		  GROUP BY IssueStatus;
+
+	- Agents Who Have Resolved the Most Issues
+		- db2 -cfg sql_query_6.sql
+		- SELECT a.AgentID, a.FirstName, a.LastName, COUNT(*) AS ResolvedIssues
+		  FROM students.Agents a
+		  JOIN students.Calls c ON a.AgentID = c.AgentID
+		  WHERE c.IssueStatus = 'Resolved'
+		  GROUP BY a.AgentID, a.FirstName, a.LastName
+		  ORDER BY ResolvedIssues DESC
+		  LIMIT 10;
+
+	- Customer Calls History 
+		- db2 -cfg sql_query_7.sql
+		- SELECT c.*, i.IssueDescription
+		  FROM students.Calls c
+		  JOIN students.Issues i ON c.CallIssueID = i.IssueID
+		  WHERE c.CustomerID = 'C100';
+
+	- Department-Wise Call Distribution 
+		- db2 -cfg sql_query_8.sql
+		- SELECT a.DepartmentID, COUNT(*) AS CallCount
+		  FROM students.Agents a
+		  JOIN students.Calls c ON a.AgentID = c.AgentID
+		  GROUP BY a.DepartmentID;
+
+	- Issues Resolved Within a Day 
+		- db2 -cfg sql_query_9.sql
+		- SELECT I.IssueDescription, COUNT(C.CallIssueID) AS IssueCount
+		  FROM students.Issues I
+		  JOIN students.Calls C ON I.IssueID = C.CallIssueID
+		  GROUP BY I.IssueDescription
+		  ORDER BY IssueCount DESC
+		  LIMIT 10;
+
+	- Longest Waiting Time for Customers
+		- db2 -cfg sql_query_11.sql
+		- SELECT *
+		  FROM students.Calls
+		  ORDER BY CallDuration DESC
+		  LIMIT 10;
+
+	- Repeat Calls from Customers 
+		- db2 -cfg sql_query_12.sql
+		- SELECT CustomerID, COUNT(*) AS RepeatCallCount
+		  FROM students.Calls
+		  GROUP BY CustomerID
+		  HAVING COUNT(*) > 1;
+
+	- Agent Performance Analysis
+		- db2 -cfg sql_query_13.sql
+		- SELECT a.AgentID, a.FirstName, 
+			    COUNT(DISTINCT c.CallID) AS HandledCalls,
+			    COUNT(DISTINCT i.IssueID) AS ResolvedIssues
+		  FROM students.Agents a
+		  LEFT JOIN students.Calls c ON a.AgentID = c.AgentID
+		  LEFT JOIN students.Issues i ON c.CallIssueID = i.IssueID
+		  GROUP BY a.AgentID, a.FirstName
+		  ORDER BY ResolvedIssues DESC, HandledCalls DESC;
+
+	- Customer Feedback on Resolutions
+		- db2 -cfg sql_query_14.sql
+		- SELECT R.ResolutionID, R.ResolutionDescription, C.IssueStatus
+		  FROM students.Resolution R
+		  JOIN students.Calls C ON R.IssueID = C.CallIssueID
+		  WHERE C.IssueStatus = 'Resolved';
+
+	- Time Taken to Resolve Issues by Department
+		- db2 -cfg sql_query_3.sql
+		- SELECT A.DepartmentID, AVG(C.DaysToResolve) AS AvgTimeToResolve
+		  FROM students.Calls C
+		  JOIN students.Agents A ON C.AgentID = A.AgentID
+		  GROUP BY A.DepartmentID;
