@@ -1,0 +1,31 @@
+﻿IssueID,IssueDescription
+CI01,Slow Internet Connection
+CI02,Billing Discrepancy
+CI03,Unable to Login
+CI04,Software Malfunction
+CI05,Network Outage
+CI06,Payment Not Processed
+CI07,Lost Package
+CI08,Faulty Equipment
+CI09,Delayed Shipment
+CI10,Incorrect Bill Amount
+CI11,Website Crashing
+CI12,Lost Password
+CI13,Service Downtime
+CI14,Defective Product
+CI15,Account Hacked
+CI16,Email Delivery Failure
+CI17,Faulty Installation
+CI18,Lost Service Request
+CI19,Product Recall
+CI20,Login Issues
+CI21,Late Delivery
+CI22,Faulty Customer Portal
+CI23,Data Breach
+CI24,Service Interruption
+CI25,Wrong Product Shipped
+CI26,Account Deactivation Issue
+CI27,Defective Hardware
+CI28,System Error
+CI29,Late Payment Fee Dispute
+CI30,Mobile App Crashing

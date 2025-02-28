@@ -1,0 +1,201 @@
+﻿ResolutionID,Resolution Description,CustomerID,IssueID
+R01,Billing System Adjustment,C001,CI20
+R02,Infrastructure Repair,C002,CI30
+R03,Hardware Replacement Completed,C003,CI04
+R04,Software Update,C004,CI02
+R05,Portal Maintenance,C005,CI20
+R06,Portal Maintenance,C006,CI27
+R07,Billing System Adjustment,C007,CI22
+R08,Rebooted Router,C008,CI26
+R09,Service Restoration,C009,CI21
+R10,Hardware Replacement,C010,CI26
+R11,App Update Released,C011,CI28
+R12,Portal Maintenance,C012,CI17
+R13,Delivery Logistics Improvement,C013,CI11
+R14,Account Verification and Reset,C014,CI24
+R15,Security Measures Implemented,C015,CI29
+R16,Account Reactivation Process,C016,CI01
+R17,System Bug Fix,C017,CI02
+R18,Hardware Replacement,C018,CI01
+R19,Security Protocol Enhancement,C019,CI23
+R20,Password Reset,C020,CI15
+R21,Installation Quality Check,C021,CI15
+R22,System Bug Fix,C022,CI25
+R23,Fee Adjustment Processed,C023,CI30
+R24,Portal Maintenance,C024,CI08
+R25,Service Restoration,C025,CI12
+R26,Rebooted Router,C026,CI29
+R27,Security Measures Implemented,C027,CI11
+R28,Security Measures Implemented,C028,CI25
+R29,Installation Quality Check,C029,CI08
+R30,Delivery Logistics Improvement,C030,CI13
+R31,Hardware Replacement,C031,CI11
+R32,Shipping Error Resolved,C032,CI22
+R33,Hardware Replacement Completed,C033,CI26
+R34,Hardware Replacement,C034,CI21
+R35,Email Server Configuration Update,C035,CI30
+R36,Portal Maintenance,C036,CI21
+R37,Security Measures Implemented,C037,CI24
+R38,Payment System Check,C038,CI06
+R39,Investigating Billing Records,C039,CI22
+R40,Delivery Logistics Improvement,C040,CI23
+R41,Fee Adjustment Processed,C041,CI29
+R42,Payment System Check,C042,CI22
+R43,Fee Adjustment Processed,C043,CI13
+R44,Product Replacement Issued,C044,CI17
+R45,Account Verification and Reset,C045,CI29
+R46,Rebooted Router,C046,CI21
+R47,Network Infrastructure Repair,C047,CI27
+R48,Software Update,C048,CI01
+R49,Infrastructure Repair,C049,CI23
+R50,Product Recall Process Completed,C050,CI12
+R51,Investigating Billing Records,C051,CI11
+R52,Software Update,C052,CI03
+R53,Security Protocol Enhancement,C053,CI10
+R54,Package Tracked and Re-Shipped,C054,CI09
+R55,Delivery Logistics Improvement,C055,CI22
+R56,Hardware Replacement Completed,C056,CI22
+R57,Email Server Configuration Update,C057,CI24
+R58,Infrastructure Repair,C058,CI26
+R59,Infrastructure Repair,C059,CI10
+R60,Product Recall Process Completed,C060,CI04
+R61,System Bug Fix,C061,CI16
+R62,Hardware Replacement,C062,CI19
+R63,Investigating Billing Records,C063,CI09
+R64,Investigating Billing Records,C064,CI30
+R65,Security Measures Implemented,C065,CI30
+R66,Rebooted Router,C066,CI06
+R67,Portal Maintenance,C067,CI19
+R68,Account Verification and Reset,C068,CI24
+R69,Package Tracked and Re-Shipped,C069,CI23
+R70,Fee Adjustment Processed,C070,CI03
+R71,Delivery Logistics Improvement,C071,CI10
+R72,Software Update,C072,CI01
+R73,Service Restoration,C073,CI02
+R74,Portal Maintenance,C074,CI09
+R75,Portal Maintenance,C075,CI01
+R76,Account Reactivation Process,C076,CI11
+R77,System Bug Fix,C077,CI03
+R78,Billing System Adjustment,C078,CI17
+R79,Login System Upgrade,C079,CI25
+R80,Hardware Replacement,C080,CI29
+R81,Payment System Check,C081,CI15
+R82,Shipping Error Resolved,C082,CI05
+R83,Hardware Replacement Completed,C083,CI25
+R84,Hardware Replacement,C084,CI04
+R85,System Bug Fix,C085,CI28
+R86,Security Protocol Enhancement,C086,CI12
+R87,Infrastructure Repair,C087,CI26
+R88,Hardware Replacement,C088,CI11
+R89,Account Reactivation Process,C089,CI26
+R90,Hardware Replacement,C090,CI15
+R91,Email Server Configuration Update,C091,CI05
+R92,Product Recall Process Completed,C092,CI17
+R93,Software Update,C093,CI03
+R94,Hardware Replacement,C094,CI24
+R95,Login System Upgrade,C095,CI22
+R96,Service Request Successfully Retrieved,C096,CI19
+R97,Fee Adjustment Processed,C097,CI15
+R98,Service Restoration,C098,CI29
+R99,Server Maintenance,C099,CI21
+R100,Network Infrastructure Repair,C100,CI03
+R101,Portal Maintenance,C101,CI12
+R102,Network Infrastructure Repair,C102,CI28
+R103,Fee Adjustment Processed,C103,CI06
+R104,Account Verification and Reset,C104,CI28
+R105,Investigating Billing Records,C105,CI25
+R106,Investigating Billing Records,C106,CI03
+R107,Security Measures Implemented,C107,CI06
+R108,Security Protocol Enhancement,C108,CI21
+R109,Security Protocol Enhancement,C109,CI28
+R110,Package Tracked and Re-Shipped,C110,CI10
+R111,Shipping Error Resolved,C111,CI01
+R112,Rebooted Router,C112,CI02
+R113,Installation Quality Check,C113,CI15
+R114,Security Measures Implemented,C114,CI24
+R115,Server Maintenance,C115,CI14
+R116,Portal Maintenance,C116,CI23
+R117,Hardware Replacement,C117,CI21
+R118,Delivery Logistics Improvement,C118,CI21
+R119,Shipping Error Resolved,C119,CI08
+R120,Package Tracked and Re-Shipped,C120,CI22
+R121,Installation Quality Check,C121,CI23
+R122,Security Measures Implemented,C122,CI30
+R123,Installation Quality Check,C123,CI05
+R124,Product Replacement Issued,C124,CI08
+R125,Infrastructure Repair,C125,CI21
+R126,Package Tracked and Re-Shipped,C126,CI28
+R127,Delivery Logistics Improvement,C127,CI26
+R128,Password Reset,C128,CI25
+R129,App Update Released,C129,CI03
+R130,Hardware Replacement,C130,CI03
+R131,Fee Adjustment Processed,C131,CI21
+R132,Account Verification and Reset,C132,CI30
+R133,Software Update,C133,CI23
+R134,Service Restoration,C134,CI21
+R135,Fee Adjustment Processed,C135,CI29
+R136,Password Reset,C136,CI04
+R137,Infrastructure Repair,C137,CI19
+R138,Investigating Billing Records,C138,CI07
+R139,Login System Upgrade,C139,CI15
+R140,Network Infrastructure Repair,C140,CI25
+R141,Account Verification and Reset,C141,CI13
+R142,Expedited Shipment Processed,C142,CI09
+R143,Delivery Logistics Improvement,C143,CI26
+R144,Expedited Shipment Processed,C144,CI30
+R145,Hardware Replacement,C145,CI25
+R146,Password Reset,C146,CI27
+R147,Expedited Shipment Processed,C147,CI13
+R148,Installation Quality Check,C148,CI27
+R149,Rebooted Router,C149,CI07
+R150,Server Maintenance,C150,CI18
+R151,Infrastructure Repair,C151,CI18
+R152,Password Reset,C152,CI24
+R153,Payment System Check,C153,CI18
+R154,Security Measures Implemented,C154,CI22
+R155,Account Verification and Reset,C155,CI10
+R156,Shipping Error Resolved,C156,CI02
+R157,Login System Upgrade,C157,CI03
+R158,Product Replacement Issued,C158,CI23
+R159,Installation Quality Check,C159,CI02
+R160,Email Server Configuration Update,C160,CI23
+R161,Installation Quality Check,C161,CI11
+R162,Network Infrastructure Repair,C162,CI19
+R163,System Bug Fix,C163,CI28
+R164,Fee Adjustment Processed,C164,CI07
+R165,Hardware Replacement,C165,CI17
+R166,Payment System Check,C166,CI02
+R167,Expedited Shipment Processed,C167,CI14
+R168,App Update Released,C168,CI04
+R169,Expedited Shipment Processed,C169,CI08
+R170,Fee Adjustment Processed,C170,CI17
+R171,Shipping Error Resolved,C171,CI03
+R172,Service Request Successfully Retrieved,C172,CI21
+R173,Infrastructure Repair,C173,CI01
+R174,Billing System Adjustment,C174,CI04
+R175,App Update Released,C175,CI14
+R176,Billing System Adjustment,C176,CI18
+R177,Installation Quality Check,C177,CI18
+R178,Rebooted Router,C178,CI25
+R179,Password Reset,C179,CI04
+R180,Payment System Check,C180,CI07
+R181,Portal Maintenance,C181,CI13
+R182,Installation Quality Check,C182,CI25
+R183,Delivery Logistics Improvement,C183,CI06
+R184,Infrastructure Repair,C184,CI27
+R185,Security Protocol Enhancement,C185,CI10
+R186,Payment System Check,C186,CI07
+R187,Delivery Logistics Improvement,C187,CI25
+R188,Account Verification and Reset,C188,CI11
+R189,Billing System Adjustment,C189,CI14
+R190,Security Protocol Enhancement,C190,CI10
+R191,Email Server Configuration Update,C191,CI27
+R192,Product Recall Process Completed,C192,CI22
+R193,Rebooted Router,C193,CI20
+R194,Product Replacement Issued,C194,CI19
+R195,Payment System Check,C195,CI24
+R196,Delivery Logistics Improvement,C196,CI05
+R197,Package Tracked and Re-Shipped,C197,CI09
+R198,System Bug Fix,C198,CI07
+R199,Expedited Shipment Processed,C199,CI13
+R200,Delivery Logistics Improvement,C200,CI16
